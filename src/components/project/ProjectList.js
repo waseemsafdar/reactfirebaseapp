@@ -1,18 +1,23 @@
 import React from 'react'
 import ProjectSummary from './ProjectSummary'
 import { Link } from 'react-router-dom'
-const ProjectList = ( {projects} ) => {
+const ProjectList = ( {projects,userid} ) => {
+  
   return (
     <div className="project-list section">
       { projects && projects.map(project => {
+       
+        if(project.authorId==userid){
         return (
           <Link to={'/project/'+project.id}> 
           <ProjectSummary project={project} key={project.id} />
           </Link>
         )
+        }
       })}  
+
+
     </div>
   )
 }
-
 export default ProjectList

@@ -8,12 +8,13 @@ import { Redirect } from 'react-router'
 const Dashboard = (props) => {
 
     const { projects , auth} = props;
+    console.log(auth.uid)
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
-            <ProjectList projects={projects} />
+            <ProjectList projects={projects} userid={auth.uid} />
           </div>
           <div className="col s12 m5 offset-m1">
             <Notifications />
@@ -25,7 +26,7 @@ const Dashboard = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  
   return {
     projects: state.firestore.ordered.projects,
     auth:state.firebase.auth

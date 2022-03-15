@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authactions'
 
 const SignedInLinks = (props) => {
-  console.log(props.profile.initials)
+  console.log('insin',props.profile.initials)
   return (
     <div>
       <ul className="right">

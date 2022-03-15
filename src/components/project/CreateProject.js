@@ -3,6 +3,7 @@ import { createProject } from '../../store/actions/projectAction'
 import React, { useState } from 'react';
 
 import { Redirect } from 'react-router'
+
  const CreateProject = (props) => {
    
    const [state, setstate] = useState( {title:'',
